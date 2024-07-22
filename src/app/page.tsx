@@ -24,7 +24,7 @@ export default function Home() {
               <Card
                 key={mold.id}
                 className='bg-background rounded-xl shadow-lg overflow-hidden '>
-                <img
+                <Image
                   src={mold.image}
                   alt={mold.title}
                   width={600}
