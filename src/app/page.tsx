@@ -40,7 +40,7 @@ export default function Home() {
                       אבקה:{' '}
                       <span className='px-2'>
                         {/* $ */}
-                        {Number(mold.powder).toFixed(1)}
+                        {Number(mold.powder)}
                       </span>
                     </p>
                     <p className='text-muted-foreground'>
