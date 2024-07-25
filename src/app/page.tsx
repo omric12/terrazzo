@@ -8,6 +8,7 @@ import {
 } from '@/components/ui/card';
 
 import Image from 'next/image';
+import Link from 'next/link';
 import { molds } from '../assets/data/molds';
 
 const labels = { Title: 'תפריט כלים', Powder: 'אבקה', Binder: 'נוזל' };
@@ -16,6 +17,15 @@ export default function Home() {
   const moldsArray = molds;
   return (
     <main className='flex min-h-screen flex-col items-center justify-between p-4 sm:p-6 md:p-8 lg:p-12'>
+      <Link href='https://www.instagram.com/starrazzo_/'>
+        <Image
+          src='/starrazzo.png'
+          alt='Instagram'
+          width={500}
+          height={250}
+          className='rounded-t-xl object-cover'
+        />
+      </Link>
       <section className='w-full py-4 sm:py-6'>
         <div className='container mx-auto'>
           <div className='mb-6 sm:mb-8'>
