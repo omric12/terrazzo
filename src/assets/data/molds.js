@@ -8,6 +8,7 @@ export const molds = [
     description: 'IMG_4865 description',
     image: '/assets/molds/IMG_4865.png',
     price: '60',
+    images: ['/assets/molds/IMG_4865.png'],
   },
   {
     title: '2',
@@ -18,6 +19,11 @@ export const molds = [
     description: 'IMG_4866 description',
     image: '/assets/molds/IMG_4866.png',
     price: '50',
+    images: [
+      '/assets/molds/IMG_4865.png',
+      '/assets/molds/IMG_4866.png',
+      '/assets/molds/IMG_4867.png',
+    ],
   },
   {
     title: '3',
@@ -28,6 +34,11 @@ export const molds = [
     description: 'IMG_4867 description',
     image: '/assets/molds/IMG_4867.png',
     price: '60',
+    images: [
+      '/assets/molds/IMG_4865.png',
+      '/assets/molds/IMG_4866.png',
+      '/assets/molds/IMG_4867.png',
+    ],
   },
   {
     title: '4',
@@ -38,6 +49,11 @@ export const molds = [
     description: 'IMG_4868 description',
     image: '/assets/molds/IMG_4868.png',
     price: '1 =20, 2=30',
+    images: [
+      '/assets/molds/IMG_4865.png',
+      '/assets/molds/IMG_4866.png',
+      '/assets/molds/IMG_4867.png',
+    ],
   },
 
   {
@@ -49,6 +65,11 @@ export const molds = [
     description: 'IMG_4870 description',
     image: '/assets/molds/IMG_4870.png',
     price: '40',
+    images: [
+      '/assets/molds/IMG_4865.png',
+      '/assets/molds/IMG_4866.png',
+      '/assets/molds/IMG_4867.png',
+    ],
   },
   {
     title: '6',
@@ -59,6 +80,11 @@ export const molds = [
     description: 'IMG_4871 description',
     image: '/assets/molds/IMG_4871.png',
     price: '35',
+    images: [
+      '/assets/molds/IMG_4865.png',
+      '/assets/molds/IMG_4866.png',
+      '/assets/molds/IMG_4867.png',
+    ],
   },
   {
     title: '7',
@@ -69,6 +95,11 @@ export const molds = [
     description: 'IMG_4872 description',
     image: '/assets/molds/IMG_4872.png',
     price: '45',
+    images: [
+      '/assets/molds/IMG_4865.png',
+      '/assets/molds/IMG_4866.png',
+      '/assets/molds/IMG_4867.png',
+    ],
   },
   {
     title: '8',
@@ -79,6 +110,11 @@ export const molds = [
     description: 'IMG_4894 description',
     image: '/assets/molds/IMG_4894.png',
     price: '30',
+    images: [
+      '/assets/molds/IMG_4865.png',
+      '/assets/molds/IMG_4866.png',
+      '/assets/molds/IMG_4867.png',
+    ],
   },
   {
     title: '9',
@@ -88,6 +124,11 @@ export const molds = [
     binder: '74',
     description: 'IMG_4874 description',
     image: '/assets/molds/IMG_4874.png',
+    images: [
+      '/assets/molds/IMG_4865.png',
+      '/assets/molds/IMG_4866.png',
+      '/assets/molds/IMG_4867.png',
+    ],
   },
 
   {
@@ -99,6 +140,11 @@ export const molds = [
     description: 'IMG_4875 description',
     image: '/assets/molds/IMG_4875.png',
     price: '45',
+    images: [
+      '/assets/molds/IMG_4865.png',
+      '/assets/molds/IMG_4866.png',
+      '/assets/molds/IMG_4867.png',
+    ],
   },
   {
     title: '11',
@@ -109,6 +155,11 @@ export const molds = [
     description: 'IMG_4869 description',
     image: '/assets/molds/IMG_4869.png',
     price: '45',
+    images: [
+      '/assets/molds/IMG_4865.png',
+      '/assets/molds/IMG_4866.png',
+      '/assets/molds/IMG_4867.png',
+    ],
   },
   {
     title: '12',
@@ -119,6 +170,11 @@ export const molds = [
     description: 'IMG_4888 description',
     image: '/assets/molds/IMG_4888.png',
     price: '50',
+    images: [
+      '/assets/molds/IMG_4865.png',
+      '/assets/molds/IMG_4866.png',
+      '/assets/molds/IMG_4867.png',
+    ],
   },
   {
     title: '13',
@@ -129,6 +185,11 @@ export const molds = [
     description: 'IMG_4878 description',
     image: '/assets/molds/IMG_4878.png',
     price: '30',
+    images: [
+      '/assets/molds/IMG_4865.png',
+      '/assets/molds/IMG_4866.png',
+      '/assets/molds/IMG_4867.png',
+    ],
   },
   {
     title: '14',
@@ -139,6 +200,11 @@ export const molds = [
     description: 'IMG_4879 description',
     image: '/assets/molds/IMG_4879.png',
     price: '40',
+    images: [
+      '/assets/molds/IMG_4865.png',
+      '/assets/molds/IMG_4866.png',
+      '/assets/molds/IMG_4867.png',
+    ],
   },
   {
     title: '15',
@@ -149,6 +215,11 @@ export const molds = [
     description: 'IMG_4880 description',
     image: '/assets/molds/IMG_4880.png',
     price: '30',
+    images: [
+      '/assets/molds/IMG_4865.png',
+      '/assets/molds/IMG_4866.png',
+      '/assets/molds/IMG_4867.png',
+    ],
   },
   {
     title: '16',
@@ -159,6 +230,11 @@ export const molds = [
     description: 'IMG_4881 description',
     image: '/assets/molds/IMG_4881.png',
     price: '1=40 , 2=65',
+    images: [
+      '/assets/molds/IMG_4865.png',
+      '/assets/molds/IMG_4866.png',
+      '/assets/molds/IMG_4867.png',
+    ],
   },
   {
     title: '17',
@@ -169,6 +245,11 @@ export const molds = [
     description: 'IMG_4893 description',
     image: '/assets/molds/IMG_4893.png',
     price: '35',
+    images: [
+      '/assets/molds/IMG_4865.png',
+      '/assets/molds/IMG_4866.png',
+      '/assets/molds/IMG_4867.png',
+    ],
   },
   {
     title: '18',
@@ -179,6 +260,11 @@ export const molds = [
     description: 'IMG_4883 description',
     image: '/assets/molds/IMG_4883.png',
     price: '40',
+    images: [
+      '/assets/molds/IMG_4865.png',
+      '/assets/molds/IMG_4866.png',
+      '/assets/molds/IMG_4867.png',
+    ],
   },
   {
     title: '19',
@@ -189,6 +275,11 @@ export const molds = [
     description: 'IMG_4884 description',
     image: '/assets/molds/IMG_4884.png',
     price: '1=35 , 2=60',
+    images: [
+      '/assets/molds/IMG_4865.png',
+      '/assets/molds/IMG_4866.png',
+      '/assets/molds/IMG_4867.png',
+    ],
   },
   {
     title: '20',
@@ -199,6 +290,11 @@ export const molds = [
     description: 'IMG_4886 description',
     image: '/assets/molds/IMG_4886.png',
     price: '1=40 , 2=65',
+    images: [
+      '/assets/molds/IMG_4865.png',
+      '/assets/molds/IMG_4866.png',
+      '/assets/molds/IMG_4867.png',
+    ],
   },
   {
     title: '21',
@@ -209,6 +305,11 @@ export const molds = [
     description: 'IMG_4887 description',
     image: '/assets/molds/IMG_4887.png',
     price: '50',
+    images: [
+      '/assets/molds/IMG_4865.png',
+      '/assets/molds/IMG_4866.png',
+      '/assets/molds/IMG_4867.png',
+    ],
   },
   {
     title: '22',
@@ -219,6 +320,11 @@ export const molds = [
     description: 'IMG_4876 description',
     image: '/assets/molds/IMG_4876.png',
     price: '50',
+    images: [
+      '/assets/molds/IMG_4865.png',
+      '/assets/molds/IMG_4866.png',
+      '/assets/molds/IMG_4867.png',
+    ],
   },
   //   {
   //     title: '24',
