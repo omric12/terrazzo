@@ -15,8 +15,13 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from '@/components/ui/carousel';
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from '@/components/ui/dialog';
 
-import { Dialog } from '@/components/ui/dialog';
 import Image from 'next/image';
 import Link from 'next/link';
 import { molds } from '../assets/data/molds';
@@ -115,41 +120,36 @@ export default function Home() {
 
       <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
         {selectedMold && (
-          <div className='fixed inset-0 z-50 bg-background/80 backdrop-blur-sm'>
-            <div className='fixed left-[50%] top-[50%] z-50 grid w-full max-w-lg translate-x-[-50%] translate-y-[-50%] gap-4 border bg-background p-6 shadow-lg duration-200 sm:rounded-lg'>
-              <div className='flex flex-col space-y-4'>
-                <button
-                  onClick={() => setIsModalOpen(false)}
-                  className='absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100'>
-                  ✕
-                </button>
-                <h2 className='text-2xl font-bold'>{selectedMold.title}</h2>
-                <Carousel
-                  className='w-full max-w-lg'
-                  opts={{
-                    align: 'start',
-                    loop: true,
-                  }}>
-                  <CarouselContent>
-                    {selectedMold.images?.map((image, index) => (
-                      <CarouselItem key={index}>
-                        <div className='relative h-64'>
-                          <Image
-                            src={image}
-                            alt={`${selectedMold.title} ${index + 1}`}
-                            fill
-                            className='object-cover rounded-lg'
-                          />
-                        </div>
-                      </CarouselItem>
-                    ))}
-                  </CarouselContent>
-                  <CarouselPrevious className='border-2 border-gray-800 bg-white/80 hover:bg-white [&>svg]:text-gray-800 hover:[&>svg]:text-gray-900' />
-                  <CarouselNext className='border-2 border-gray-800 bg-white/80 hover:bg-white [&>svg]:text-gray-800 hover:[&>svg]:text-gray-900' />
-                </Carousel>
-              </div>
+          <DialogContent className='max-w-lg'>
+            <DialogHeader>
+              <DialogTitle>{selectedMold.title}</DialogTitle>
+            </DialogHeader>
+            <div className='flex flex-col space-y-4'>
+              <Carousel
+                className='w-full'
+                opts={{
+                  align: 'start',
+                  loop: true,
+                }}>
+                <CarouselContent>
+                  {selectedMold.images?.map((image, index) => (
+                    <CarouselItem key={index}>
+                      <div className='relative h-64'>
+                        <Image
+                          src={image}
+                          alt={`${selectedMold.title} ${index + 1}`}
+                          fill
+                          className='object-cover rounded-lg'
+                        />
+                      </div>
+                    </CarouselItem>
+                  ))}
+                </CarouselContent>
+                <CarouselPrevious className='border-2 border-gray-800 bg-white/80 hover:bg-white [&>svg]:text-gray-800 hover:[&>svg]:text-gray-900' />
+                <CarouselNext className='border-2 border-gray-800 bg-white/80 hover:bg-white [&>svg]:text-gray-800 hover:[&>svg]:text-gray-900' />
+              </Carousel>
             </div>
-          </div>
+          </DialogContent>
         )}
       </Dialog>
     </main>
