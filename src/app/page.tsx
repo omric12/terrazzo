@@ -27,8 +27,8 @@ const labels = { Title: 'תפריט כלים', Powder: 'אבקה', Binder: 'נו
 interface Mold {
   id: string;
   title: string;
-  powder: number;
-  binder: number;
+  powder: string;
+  binder: string;
   image: string;
   images?: string[];
 }
@@ -94,7 +94,7 @@ export default function Home() {
                         {labels.Powder}:
                       </span>
                       <span className='px-3 py-1 bg-primary/10 rounded-full text-sm font-semibold'>
-                        {Number(mold.powder)}
+                        {mold.powder}
                       </span>
                     </div>
                     <div className='flex items-center space-x-2 rtl:space-x-reverse'>
@@ -102,7 +102,7 @@ export default function Home() {
                         {labels.Binder}:
                       </span>
                       <span className='px-3 py-1 bg-primary/10 rounded-full text-sm font-semibold'>
-                        {Number(mold.binder)}
+                        {mold.binder}
                       </span>
                     </div>
                   </CardContent>
