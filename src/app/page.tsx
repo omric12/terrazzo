@@ -27,7 +27,14 @@ import Link from 'next/link';
 import { molds } from '../assets/data/molds';
 import { useState } from 'react';
 
-const labels = { Title: 'תפריט כלים', Powder: 'אבקה', Binder: 'נוזל' };
+const labels = {
+  Title: 'תפריט כלים',
+  Powder: 'אבקה',
+  Binder: 'נוזל',
+  Terrazzo: 'טראצו',
+  Size: 'סוג',
+  Amount: 'תבניות',
+};
 
 interface Mold {
   id: string;
@@ -108,6 +115,30 @@ export default function Home() {
                       </span>
                       <span className='px-3 py-1 bg-primary/10 rounded-full text-sm font-semibold'>
                         {mold.binder}
+                      </span>
+                    </div>
+                    <div className='flex items-center space-x-2 rtl:space-x-reverse'>
+                      <span className='text-sm font-medium text-muted-foreground'>
+                        {labels.Size}:
+                      </span>
+                      <span className='px-3 py-1 bg-primary/10 rounded-full text-sm font-semibold'>
+                        {mold.size}
+                      </span>
+                    </div>
+                    <div className='flex items-center space-x-2 rtl:space-x-reverse'>
+                      <span className='text-sm font-medium text-muted-foreground'>
+                        {labels.Terrazzo}:
+                      </span>
+                      <span className='px-3 py-1 bg-primary/10 rounded-full text-sm font-semibold'>
+                        {mold.terrazzo ? 'כן' : 'לא'}
+                      </span>
+                    </div>
+                    <div className='flex items-center space-x-2 rtl:space-x-reverse'>
+                      <span className='text-sm font-medium text-muted-foreground'>
+                        {labels.Amount}:
+                      </span>
+                      <span className='px-3 py-1 bg-primary/10 rounded-full text-sm font-semibold'>
+                        {mold.amount}
                       </span>
                     </div>
                   </CardContent>
