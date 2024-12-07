@@ -211,7 +211,7 @@ export const molds = [
   },
   {
     title: 'קונכייה',
-    amount: 2,
+    amount: 1,
     size: 'Small',
     terrazzo: false,
     id: '13',
@@ -247,7 +247,7 @@ export const molds = [
   },
   {
     title: 'צדפה',
-    amount: 2,
+    amount: 1,
     size: 'Small',
     terrazzo: false,
     id: '15',
@@ -283,7 +283,7 @@ export const molds = [
   },
   {
     title: 'כוכב',
-    amount: 2,
+    amount: 1,
     size: 'Small',
     terrazzo: false,
     id: '17',
@@ -439,9 +439,33 @@ export const molds = [
     description: 'IMG_4898',
     image: '/assets/molds/IMG_4898.png',
   },
+  {
+    title: 'כוס פסים',
+    size: 'Small',
+    terrazzo: false,
+    id: '25',
+    name: 'IMG_4899',
+    powder: '130',
+    binder: '52',
+    description: 'IMG_4899 description',
+    image: '/assets/molds/IMG_4899.png',
+  },
+  {
+    title: 'זוג פמוט עגול',
+    size: 'Big',
+    terrazzo: true,
+    id: '25',
+    name: 'IMG_4900',
+    powder: '330',
+    binder: '132',
+    description: 'IMG_4900 description',
+    image: '/assets/molds/IMG_4900.png',
+  },
+
   //   {
   //         title: '24',
-
+  // size: 'Small',
+  // terrazzo: false,
   //     id: '25',
   //     name: 'WhatsApp Image 2024-12-01 at 23.18.52',
   //     powder: '360',
