@@ -441,6 +441,7 @@ export const molds = [
   },
   {
     title: 'כוס פסים',
+    amount: 1,
     size: 'Small',
     terrazzo: false,
     id: '25',
@@ -452,6 +453,7 @@ export const molds = [
   },
   {
     title: 'זוג פמוט עגול',
+    amount: 3,
     size: 'Big',
     terrazzo: true,
     id: '25',
