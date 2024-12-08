@@ -211,7 +211,7 @@ export const molds = [
   },
   {
     title: 'קונכייה',
-    amount: 1,
+    amount: 2,
     size: 'Small',
     terrazzo: false,
     id: '13',
@@ -247,7 +247,7 @@ export const molds = [
   },
   {
     title: 'צדפה',
-    amount: 1,
+    amount: 2,
     size: 'Small',
     terrazzo: false,
     id: '15',
@@ -283,7 +283,7 @@ export const molds = [
   },
   {
     title: 'כוכב',
-    amount: 1,
+    amount: 2,
     size: 'Small',
     terrazzo: false,
     id: '17',
