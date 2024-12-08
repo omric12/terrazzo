@@ -464,8 +464,21 @@ export const molds = [
     image: '/assets/molds/IMG_4900.png',
   },
 
+  {
+    title: 'חמסה',
+    amount: 2,
+    size: 'Small',
+    terrazzo: false,
+    id: '25',
+    name: 'IMG_4901',
+    powder: '360',
+    binder: '145',
+    description: 'IMG_4901 description',
+    image: '/assets/molds/IMG_4901.png',
+  },
   //   {
   //         title: '24',
+  amount: 3,
   // size: 'Small',
   // terrazzo: false,
   //     id: '25',
