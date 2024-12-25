@@ -1,5 +1,5 @@
 export interface Mold {
-  id: string;
+  id?: string;
   title: string;
   name: string;
   powder: string;

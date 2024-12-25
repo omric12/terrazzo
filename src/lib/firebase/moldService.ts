@@ -32,55 +32,99 @@ export const moldService = {
         ...doc.data(),
       })) as Mold[];
     } catch (error) {
-      console.error('Error fetching molds:', error);
+      console.error('Error getting molds:', error);
       throw error;
     }
   },
 
-  async createMold(mold: Omit<Mold, 'id' | 'createdAt' | 'updatedAt'>) {
+  async createMold(
+    mold: Omit<Mold, 'id'> & { imageFile: File; additionalImageFiles: File[] }
+  ) {
     try {
-      const docRef = await addDoc(collection(db, 'molds'), {
+      // Upload main image to Firebase Storage
+      const mainImageRef = ref(
+        storage,
+        `molds/${Date.now()}_${mold.imageFile.name}`
+      );
+      const mainImageSnapshot = await uploadBytes(mainImageRef, mold.imageFile);
+      const mainImageUrl = await getDownloadURL(mainImageSnapshot.ref);
+
+      // Upload additional images to Firebase Storage
+      const additionalImageUrls = await Promise.all(
+        mold.additionalImageFiles.map(async (file) => {
+          const imageRef = ref(storage, `molds/${Date.now()}_${file.name}`);
+          const snapshot = await uploadBytes(imageRef, file);
+          return await getDownloadURL(snapshot.ref);
+        })
+      );
+
+      // Add mold document to Firestore
+      const moldData = {
         ...mold,
-        createdAt: new Date(),
-        updatedAt: new Date(),
-      });
-      return docRef.id;
+        image: mainImageUrl,
+        images: additionalImageUrls,
+      };
+      const docRef = await addDoc(collection(db, 'molds'), moldData);
+      return { id: docRef.id, ...moldData };
     } catch (error) {
       console.error('Error creating mold:', error);
       throw error;
     }
   },
 
-  async updateMold(id: string, mold: Partial<Mold>) {
+  async updateMold(
+    id: string,
+    data: Partial<Mold> & { imageFile?: File; additionalImageFiles?: File[] }
+  ) {
     try {
-      const docRef = doc(db, 'molds', id);
-      await updateDoc(docRef, {
-        ...mold,
-        updatedAt: new Date(),
-      });
+      const moldRef = doc(db, 'molds', id);
+
+      if (data.imageFile) {
+        // Upload new main image to Firebase Storage
+        const mainImageRef = ref(
+          storage,
+          `molds/${Date.now()}_${data.imageFile.name}`
+        );
+        const mainImageSnapshot = await uploadBytes(
+          mainImageRef,
+          data.imageFile
+        );
+        const mainImageUrl = await getDownloadURL(mainImageSnapshot.ref);
+        data.image = mainImageUrl;
+        delete data.imageFile;
+      }
+
+      if (data.additionalImageFiles) {
+        // Upload new additional images to Firebase Storage
+        const additionalImageUrls = await Promise.all(
+          data.additionalImageFiles.map(async (file) => {
+            const imageRef = ref(storage, `molds/${Date.now()}_${file.name}`);
+            const snapshot = await uploadBytes(imageRef, file);
+            return await getDownloadURL(snapshot.ref);
+          })
+        );
+        data.images = additionalImageUrls;
+        delete data.additionalImageFiles;
+      }
+
+      await updateDoc(moldRef, data);
     } catch (error) {
       console.error('Error updating mold:', error);
       throw error;
     }
   },
 
-  async uploadImage(file: File, path: string) {
+  async deleteMold(id: string, imageUrl: string) {
     try {
-      const storageRef = ref(storage, path);
-      await uploadBytes(storageRef, file);
-      return await getDownloadURL(storageRef);
-    } catch (error) {
-      console.error('Error uploading image:', error);
-      throw error;
-    }
-  },
+      // Delete main image from Firebase Storage
+      const imageRef = ref(storage, imageUrl);
+      await deleteObject(imageRef);
 
-  async deleteImage(path: string) {
-    try {
-      const storageRef = ref(storage, path);
-      await deleteObject(storageRef);
+      // Delete mold document from Firestore
+      const moldRef = doc(db, 'molds', id);
+      await deleteDoc(moldRef);
     } catch (error) {
-      console.error('Error deleting image:', error);
+      console.error('Error deleting mold:', error);
       throw error;
     }
   },
